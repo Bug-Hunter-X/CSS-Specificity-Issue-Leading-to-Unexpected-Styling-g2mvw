@@ -1,0 +1,21 @@
+To fix the issue, we can adjust the specificity of the selectors:
+
+```css
+.container {
+  width: 500px;
+  height: 300px;
+  background-color: lightblue;
+}
+
+.box {
+  background-color: lightgreen;
+}
+
+.container .box {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral !important; /* Use !important only when absolutely necessary */
+}
+```
+
+By making `.box`'s specificity higher using the `!important` flag, we ensure that the background color of the `.box` inside the container takes priority. Alternatively, restructuring the CSS to address the specificity directly could provide a cleaner approach without using `!important`.
