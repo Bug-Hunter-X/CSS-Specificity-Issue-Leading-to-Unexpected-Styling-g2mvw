@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an issue where the expected behavior does not occur due to specificity and inheritance issues:
+
+```css
+.container {
+  width: 500px;
+  height: 300px;
+  background-color: lightblue;
+}
+
+.container .box {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.box {
+  background-color: lightgreen; /* This style is unexpectedly overridden */
+}
+```
+
+In this case, we might expect the `.box` element to have a background color of `lightgreen` because of the later style definition. However, due to the specificity of `.container .box`, the `lightcoral` color is applied instead. This is a common issue stemming from a lack of understanding of CSS specificity.
